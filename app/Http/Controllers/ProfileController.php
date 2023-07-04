@@ -72,13 +72,13 @@ class ProfileController extends Controller
         $user=\Auth::user();
         $user->name=$request->user_name;
         $user->save();
-        return redirect('/');
+        return redirect(route('profile.index'));
     }
     
     public function email_update(ProfileUpdateRequest $request){
         $user=\Auth::user();
         $user->email=$request->user_email;
         $user->save();
-        return redirect('/');
+        return redirect(route('profile.index'));
     }
 }

@@ -29,9 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile',[ProfileController::class,'index'])->name('profile.index');
     Route::resource('books',BooksController::class);
     Route::group(['prefix'=>'books/{id}'],function(){
-       Route::put('title_update',[BooksController::class,'title_update'])->name('books.titleUpdate'); 
-       Route::put('display_update',[BooksController::class,'display_update'])->name('books.displayUpdate'); 
-       Route::put('number_update',[BooksController::class,'number_update'])->name('books.numberUpdate'); 
+       Route::put('info_update',[BooksController::class,'info_update'])->name('books.infoUpdate');
        Route::put('number_fluctuation_plus',[BooksController::class,'number_fluctuation_plus'])->name('books.numberFluctuationPlus');
        Route::put('number_fluctuation_minus',[BooksController::class,'number_fluctuation_minus'])->name('books.numberFluctuationMinus');
     });

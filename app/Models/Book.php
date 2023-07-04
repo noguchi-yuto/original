@@ -11,6 +11,10 @@ class Book extends Model
         'book_title',
         'book_display',
         'book_number',
+        'book_isbn',
+        'book_author',
+        'book_coverURL',
+        'book_publisher',
     ];
     use HasFactory;
     public function user()
