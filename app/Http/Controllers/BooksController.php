@@ -29,7 +29,9 @@ class BooksController extends Controller
                 $books=$query->paginate(5);
                 $count=$query->count();
                 foreach($books as $book){
-                    $totalNumber += $book->book_number;
+                    if(\Auth::id()===$book->user_id){
+                        $totalNumber += $book->book_number; 
+                    }
                 }
             }else{
                 //本の一覧を取得
@@ -37,7 +39,9 @@ class BooksController extends Controller
                 //ほんのカウント用
                 $book_count=Book::all();
                 foreach($book_count as $book){
-                $totalNumber += $book->book_number;
+                    if(\Auth::id()===$book->user_id){
+                        $totalNumber += $book->book_number;
+                    }
                 }
             }
 
